@@ -27,7 +27,7 @@ import serial, struct, time
 import sqlite3
 import datetime
 
-conn = sqlite3.connect('/home/pi/sensor') #Conexion a SQLite3
+conn = sqlite3.connect(PATH+'sensor') #Conexion a SQLite3
 punterodb = conn.cursor()
 fecha = datetime.datetime.now()
 
