@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
+#  Based:
 #  SDS011_Feinstaub_Sensor.py
 #  
 #  Copyright 2017 Dr. M. Luetzelberger <webmaster@raspberryblog.de>
@@ -43,12 +43,10 @@ def dump_data(d):
     print(' '.join(x.encode('hex') for x in d))
 
 def process_frame(d):
-    #dump_data(d) #debug
     r = struct.unpack('<HHxxBBB', d[2:])
     pm25 = r[0]/10.0
     pm10 = r[1]/10.0
     checksum = sum(ord(v) for v in d[2:8])%256
-    #print("PM 2.5: {} μg/m^3  PM 10: {} μg/m^3 CRC={}".format(pm25, pm10, "OK" if (checksum==r[2] and r[3]==0xab) else "NOK"))
     pm={'pm25':pm25,'pm10':pm10}
     return pm
 
@@ -112,21 +110,19 @@ def sensor_sleep():
 
 def savePM(pm):
     sql= "INSERT INTO sensor VALUES ('{}',{},{});".format(str(fecha),str(pm['pm25']),str(pm['pm10']))
-    #print (sql)
     punterodb.execute(sql)
     conn.commit()
 
 
 def main(args):
-	#sensor_wake()
-        #time.sleep(15)
+	sensor_wake()
+        time.sleep(15)
 	ser.flushInput()
 	pm = sensor_read()
         time.sleep(5)
-	#sensor_sleep()
+	sensor_sleep()
         savePM(pm)
 
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
-    
