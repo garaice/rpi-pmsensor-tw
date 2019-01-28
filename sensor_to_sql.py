@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#  Based:
-#  SDS011_Feinstaub_Sensor.py
 #  
 #  Copyright 2017 Dr. M. Luetzelberger <webmaster@raspberryblog.de>
 #  
