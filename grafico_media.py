@@ -6,16 +6,14 @@ Created on Thu Mar 15 11:18:25 2018
 @author: jesus
 """
 
-import sqlite3
-#import matplotlib as mpl
-#mpl.use('Agg')
+import sqlite3,statistics,os
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from datetime import datetime
-import statistics
 
 
-sqlite_file = PATH+'sensor' #Datos recogidos por el sensor
+PATH=os.path.dirname(os.path.abspath(__file__))
+sqlite_file = PATH+'/sensor' #Datos recogidos por el sensor
 
 conn = sqlite3.connect(sqlite_file)
 c = conn.cursor()
@@ -99,4 +97,4 @@ ax1.grid(True)
 ax1.legend(loc='best', framealpha=0.5)
 
 
-plt.savefig(PATH+"figure.png")
+plt.savefig(PATH+"/figure.png")
