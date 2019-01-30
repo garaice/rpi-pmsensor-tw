@@ -6,10 +6,9 @@ Created on Wed Jan 24 12:21:51 2018
 @author: jesus
 """
 
-import tweepy
-import sqlite3
+import tweepy,sqlite3,os,statistics
 from datetime import datetime
-import statistics
+
 
 consumer_key = 'KEY'
 consumer_secret = 'KEY'
@@ -17,7 +16,9 @@ access_token = 'KEY'
 access_token_secret = 'KEY'
 limite_pm25 = 20 #Limite maximo alerta
 limite_pm10 = 30 #Limite maximo alerta
-sqlite_file = PATH+'sensor'
+
+PATH=os.path.dirname(os.path.abspath(__file__))
+sqlite_file = PATH+'/sensor'
 
 # Access and authorize our Twitter credentials from credentials.py
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
