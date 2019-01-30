@@ -6,7 +6,7 @@ Created on Wed Jan 24 12:21:51 2018
 @author: jesus
 """
 
-import tweepy
+import tweepy,os
 
 
 consumer_key = 'KEY'
