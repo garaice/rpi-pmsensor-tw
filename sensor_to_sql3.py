@@ -28,8 +28,8 @@ PATH=os.path.dirname(os.path.abspath(__file__))
 
 sensor = SDS011("/dev/ttyUSB0", use_query_mode=True)
 conn = sqlite3.connect(PATH+'/sensor') #Conexion a SQLite3
-punterodb = conn.cursor()
 
+punterodb = conn.cursor()
 fecha = datetime.datetime.now()
 
 
