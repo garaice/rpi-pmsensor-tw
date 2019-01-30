@@ -1,13 +1,13 @@
 # rpi-pmsensor-tw
 Python 3 scripts to send pm 2.5 and pm 10 sensors values to twitter
 
-  apt install libatlas3-base python3
+  
 Sensor abstraction library
 https://github.com/ikalchev/py-sds011
 
     cd py-sds011/
     pip install .
-
+    apt install libatlas3-base python3
     update-alternatives --list python
     update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
     update-alternatives --install /usr/bin/python python /usr/bin/python3 1
