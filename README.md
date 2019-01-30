@@ -18,4 +18,4 @@ https://github.com/ikalchev/py-sds011
     update-alternatives --config python
     pip install matplotlib
     pip install -U numpy
-      
+    pip install tweepy
