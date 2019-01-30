@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #  
-#  Copyright 2017 Dr. M. Luetzelberger <webmaster@raspberryblog.de>
-#  https://github.com/luetzel
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -37,7 +35,6 @@ fecha = datetime.datetime.now()
 
 def savePM(pm):
     sql= "INSERT INTO datos VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
-    print(sql)
     punterodb.execute(sql)
     conn.commit()
 
