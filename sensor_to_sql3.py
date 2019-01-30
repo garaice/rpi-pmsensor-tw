@@ -34,7 +34,7 @@ fecha = datetime.datetime.now()
 
 
 def savePM(pm):
-    sql= "INSERT INTO datos VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
+    sql= "INSERT INTO sensor VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
     punterodb.execute(sql)
     conn.commit()
 
