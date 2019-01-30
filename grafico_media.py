@@ -13,7 +13,7 @@ from datetime import datetime
 
 
 PATH=os.path.dirname(os.path.abspath(__file__))
-sqlite_file = PATH+'/sensor' #Datos recogidos por el sensor
+sqlite_file = PATH+'/sensor.sql' #Datos recogidos por el sensor
 
 conn = sqlite3.connect(sqlite_file)
 c = conn.cursor()
@@ -21,7 +21,7 @@ c = conn.cursor()
 ahora = datetime.now().strftime("%Y-%m-%d")
 hoy = "'"+ahora+"%';"
 
-sql = "SELECT hora, pm25, pm10 FROM sensor where hora like "+hoy
+sql = "SELECT hora, pm25, pm10 FROM data where hora like "+hoy
 c.execute(sql)
 data = c.fetchall()
 

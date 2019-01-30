@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #  
+#  Copyright 2017 Dr. M. Luetzelberger <webmaster@raspberryblog.de>
+#  https://github.com/luetzel
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
@@ -25,7 +27,7 @@ from sds011 import SDS011
 PATH=os.path.dirname(os.path.abspath(__file__))
 
 sensor = SDS011("/dev/ttyUSB0", use_query_mode=True)
-conn = sqlite3.connect(PATH+'/sensor') #Conexion a SQLite3
+conn = sqlite3.connect(PATH+'/sensor.sql') #Conexion a SQLite3
 
 punterodb = conn.cursor()
 fecha = datetime.datetime.now()
@@ -34,7 +36,7 @@ fecha = datetime.datetime.now()
 
 
 def savePM(pm):
-    sql= "INSERT INTO sensor VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
+    sql= "INSERT INTO data VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
     punterodb.execute(sql)
     conn.commit()
 
