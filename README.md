@@ -4,7 +4,7 @@ Python 3 scripts to send pm 2.5 and pm 10 sensors values to twitter
   
 Sensor abstraction library
 https://github.com/ikalchev/py-sds011
-'''bash
+```bash
     cd py-sds011/
     pip install .
     apt install libatlas3-base python3
@@ -19,4 +19,4 @@ https://github.com/ikalchev/py-sds011
     pip install matplotlib
     pip install -U numpy
     pip install tweepy
-'''
+```
