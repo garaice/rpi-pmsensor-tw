@@ -5,7 +5,8 @@ Created on Thu Mar 15 11:18:25 2018
 
 @author: jesus
 """
-
+import matplotlib
+matplotlib.use('Agg')
 import sqlite3,statistics,os
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
