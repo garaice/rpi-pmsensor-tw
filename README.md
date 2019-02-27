@@ -19,4 +19,5 @@ https://github.com/ikalchev/py-sds011
     pip install matplotlib
     pip install -U numpy
     pip install tweepy
+    pip install python-aqi
 ```
