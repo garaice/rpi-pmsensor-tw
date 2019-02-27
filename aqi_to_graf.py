@@ -31,7 +31,7 @@ aqi = []
 
 for row in data:
     hora.append(datetime.strptime(row[0], '%Y-%m-%d %H:%M:%S.%f'))#con el fin de pasar el texto a fecha
-    aqui.append(row[1])
+    aqi.append(row[1])
         
 
 c.close()
