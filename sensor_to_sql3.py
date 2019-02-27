@@ -23,6 +23,8 @@
 import sqlite3,time,os
 import datetime
 from sds011 import SDS011
+import aqi
+
 
 PATH=os.path.dirname(os.path.abspath(__file__))
 
@@ -36,7 +38,8 @@ fecha = datetime.datetime.now()
 
 
 def savePM(pm):
-    sql= "INSERT INTO data VALUES ('{}',{},{});".format(str(fecha),str(pm[0]),str(pm[1]))
+    myaqi = aqi.to_aqi([(aqi.POLLUTANT_PM25, pm['pm25']),(aqi.POLLUTANT_PM10, pm['pm10'])])
+    sql= "INSERT INTO data VALUES ('{}',{},{},{});".format(str(fecha),str(pm[0]),str(pm[1]),str(myaqi))
     punterodb.execute(sql)
     conn.commit()
 
